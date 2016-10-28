@@ -4,15 +4,38 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+import { RouterModule }   from '@angular/router';
+import { UserComponent } from './user/user.component';
+import { PostComponent } from './post/post.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
+
+// const routes: Routes = [
+//
+// ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    UserComponent,
+    PostComponent,
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+  //  RouterModule.forRoot(routes, { useHash: true })
+  RouterModule.forRoot([
+      { path: 'user', component: UserComponent },
+      { path: 'posts', component: PostComponent },
+      { path: 'home', component: HomeComponent },
+       { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
