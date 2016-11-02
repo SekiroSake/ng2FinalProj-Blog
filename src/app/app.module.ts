@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { RouterModule }   from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { UserService } from './user/user.service';
 import { PostComponent } from './post/post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
@@ -39,7 +40,7 @@ import { HomeComponent } from './home/home.component';
        { path: '**', component: NotFoundComponent }
     ])
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
