@@ -12,6 +12,7 @@ import { UserService } from './user/user.service';
 import { PostComponent } from './post/post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { NewUserComponent } from './user/new-user/new-user.component';
 
 // const routes: Routes = [
 //
@@ -24,20 +25,24 @@ import { HomeComponent } from './home/home.component';
     UserComponent,
     PostComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-  //  RouterModule.forRoot(routes, { useHash: true })
-  RouterModule.forRoot([
-    { path: '', redirectTo: '/home',
-        pathMatch: 'full'},
-    { path: 'home', component: HomeComponent },
+    //  RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot([
+      {
+        path: '', redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      { path: 'home', component: HomeComponent },
       { path: 'user', component: UserComponent },
       { path: 'posts', component: PostComponent },
-       { path: '**', component: NotFoundComponent }
+      { path: 'new', component: NewUserComponent },
+      { path: '**', component: NotFoundComponent }
     ])
   ],
   providers: [UserService],
