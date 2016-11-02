@@ -31,9 +31,11 @@ import { HomeComponent } from './home/home.component';
     HttpModule,
   //  RouterModule.forRoot(routes, { useHash: true })
   RouterModule.forRoot([
+    { path: '', redirectTo: '/home',
+        pathMatch: 'full'},
+    { path: 'home', component: HomeComponent },
       { path: 'user', component: UserComponent },
       { path: 'posts', component: PostComponent },
-      { path: 'home', component: HomeComponent },
        { path: '**', component: NotFoundComponent }
     ])
   ],
